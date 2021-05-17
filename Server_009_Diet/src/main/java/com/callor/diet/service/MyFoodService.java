@@ -8,7 +8,7 @@ import com.callor.diet.model.MyFoodVO;
 public interface MyFoodService {
 
 	public List<MyFoodCDTO> selectAll();
-	public MyFoodCDTO findById();
+	public MyFoodCDTO findById(Long seq);
 	
 	public List<MyFoodCDTO> findByName(String mf_name);
 	public List<MyFoodCDTO> findByDate(String mf_date);
