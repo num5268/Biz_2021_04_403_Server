@@ -15,7 +15,7 @@ css,js등 외부 파일을 변경해도 적용이 안되는 경우가 있다
  --%>
 
 <link rel="stylesheet" 
-	href="${rootPath}/css/home.css?ver=1" />
+	href="/diet/css/home.css?ver=1=2021-05-18-001" />
 <%--
 외부의 cdd file 가져오기
 webapp 폳로는 프로젝트의 외부에서 접근할때
