@@ -16,16 +16,16 @@
 			padding:8px;
 			outline: none;
 			border:none;
-			color: gray;
+			color: white;
 		}
 		div.view_btn button:nth-child(1) {
-			background-color: #e8c3c3;
+			background-color: #006400;
 		}
 		div.view_btn button:nth-child(2) {
-			background-color: #f5f6c6;
+			background-color: #8B4513;
 		}
 		div.view_btn button:nth-child(3) {
-			background-color: #c6f6e4;
+			background-color: #800000;
 		}
 		div.view_btn button:hover{
 			box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);

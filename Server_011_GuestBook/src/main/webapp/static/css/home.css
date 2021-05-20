@@ -21,24 +21,7 @@ h1 {
 	text-align: center;
 }
 
-nav {
-	background-color: blue;
-}
-ul{
-	margin:0px;
-	background-color: #74baba; 
-}
-li{
-	display : inline-block;
-	list-style: none;
-	margin: 0px;
-	padding: 10px;
-	color:white;
-}
-li:hover {
-	background-color: #5483ef;
-	color: black;
-}
+
 table {
 	border-collapse: collapse;
 	width:80%;
