@@ -1,6 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <style>
+
+/*
+	CSS를 사용하여 화면을 디자인 할때
+	항상 제일먼저 있어야 할 설정
+	기본 HTML의 margin, padding을 clear(Reset)아여
+	이후에 작성된 css의 margin,padding을 원할히 
+	적용시키기 위함이다
+	
+	box-sizing: border-box;
+	Block type tag를 사용하여 화면을 그릴때
+	padding, margin, border값을 지정할때
+	좌 우로 벗어나서 그려지는 현상을 없애기 위한 설정
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+h1.main{
+	background-color:#00bf60;
+	padding:2rem;
+	color: white;
+	text-align: center;
+	/*
+	HTML, CSS에서의 단위구조
+	dp, sp, pt, px : 절대값으로 단위 지정하기
+	
+	rem(em) : 상대값으로 단위 지정하기
+	내부에 Text 포함된 tag의 경우
+	text 높이를 1rem(em)으로 설정하고,
+	비율에 맞추어서 상대적으로 크기를 지정하기
+	*/
+	
+}
 	nav#main {
 		background-color: blue;
 	}
@@ -92,7 +128,7 @@
 	});
 		
 	</script>
-<h1>방명록 2021</h1>
+<h1 class="main">방명록 2021</h1>
 	<%-- 메뉴를 설정할때 사용하는 tag --%>
 	<%-- div라는 tag를 사용하여 layout을 설정했는데 --%>
 	<%-- HTML5 에서는 Symatec(의미있는 이름으로) tag를 --%>
