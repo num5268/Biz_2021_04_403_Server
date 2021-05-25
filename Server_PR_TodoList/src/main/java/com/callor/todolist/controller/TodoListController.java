@@ -28,10 +28,17 @@ public class TodoListController extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
 		String subPath = req.getPathInfo();
-		if(subPath.equals("/home")) {
+		if(subPath.equals("/view") ) {
 			String strSeq = req.getParameter("td_seq");
 			Long td_seq = Long.valueOf(strSeq);
 			TodoVO tdVO = tdService.findById(td_seq);
+			req.setAttribute("TD", tdVO);
+			
+		} else if(subPath == null || subPath.equals("")) {
+			System.out.println("subPath없음");
+		} else if( subPath.equals("/insert")) {
+			
+			TodoVO tdVO = new TodoVO();
 			
 			SimpleDateFormat sd 
 			= new SimpleDateFormat("yyyy-MM-dd");
@@ -47,6 +54,8 @@ public class TodoListController extends HttpServlet{
 			
 			req.setAttribute("TD", tdVO);
 			
+		} else if(subPath == null || subPath.equals("")) {
+			System.out.println("subPath없음");
 		}
 	}			
 
@@ -68,10 +77,20 @@ public class TodoListController extends HttpServlet{
 		tdVO.setTd_place(td_place);
 		
 		System.out.println(tdVO.toString());
-		if(subPath.equals("/home")) {
+		if(subPath.equals("/insert")) {
 			tdService.insert(tdVO);
 			resp.sendRedirect("/todolist/");
 			
+		} else if(subPath == null || subPath.equals("")) {
+			System.out.println("subPath없음");
+		} else if(subPath.equals("/update")) {
+			String strSeq = req.getParameter("td_seq");
+			Long td_seq = Long.valueOf(strSeq);
+			
+			tdVO.setTd_seq(td_seq);
+			tdService.update(tdVO);
+			
+			resp.sendRedirect("/todolist/");
 		}
 	}
 }

@@ -24,19 +24,20 @@ rel="stylesheet" />
 		cursor:pointer;
 		box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
 	}
-	table#add{
-		color: green;
-	}
-	table#add:hover {
-		background-color: green;
-	}
+	
 </style>
 <script>
 
 document.addEventListener("DOMContentLoaded",function(){
+	
 	document.querySelector("button.btn_save")
 	.addEventListener("click",function(ev){
-		
+		document.location.href 
+		= "${rootPath}/todolist/insert"
+	})	
+	
+	document.querySelector("button.btn_save")
+	.addEventListener("click",function(ev){
 		
 		let dom = document;
 		
@@ -50,22 +51,20 @@ document.addEventListener("DOMContentLoaded",function(){
 		= dom.querySelector("input[name='td_place']");
 		
 		dom.querySelector("form.v1").submit();
-	}) // table의 click
-	
-}) // 전체
+	}) 
+}) 
 </script>
 </head>
 <body>
-<form class="v1" method="POST" action="todolist">
+<form class="v1" method="POST" >
 	<h1>TO DO List</h1>
-	<input name="td_date" placeholder="작성일자">
-	<input name="td_time" placeholder="작성시각">
+	
+	<input name="td_date" placeholder="작성일자" >
+	<input name="td_time" placeholder="작성시각" >
 	<input name="td_work" placeholder="할일">
-	<input name="td_place" placeholder="장소">
+	<input name="td_place" placeholder="장소" >
 	<table id="add">
 	<button class="btn_save" type="button">추가</button>
-	</table>
-	<table>
 	<tr>
 		<th>No.</th>
 		<th>할일</th>

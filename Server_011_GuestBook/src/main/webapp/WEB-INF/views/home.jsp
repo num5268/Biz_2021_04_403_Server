@@ -17,7 +17,9 @@ rel="stylesheet" />
 		background-color: #ddd;
 	}
 </style>
-
+<%-- DOMContentLoaded script를 아무곳에나 놓기위해 만든 이벤트
+	화면에 html 문서가 모두 그려지고난후에 넣어라 이코드가 없으면
+	script 코드는 맨 밑으로 가야한다 --%>
 <script>
 document.addEventListener("DOMContentLoaded",function(){
 	document.querySelector("table#gblist")
