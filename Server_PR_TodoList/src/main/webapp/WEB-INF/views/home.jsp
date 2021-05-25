@@ -27,44 +27,45 @@ rel="stylesheet" />
 	
 </style>
 <script>
-
 document.addEventListener("DOMContentLoaded",function(){
 	
-	document.querySelector("button.btn_save")
+	document
+	.querySelector("button.btn_save")
 	.addEventListener("click",function(ev){
 		document.location.href 
 		= "${rootPath}/todolist/insert"
 	})	
 	
-	document.querySelector("button.btn_save")
+	document.querySelector("table#add")
 	.addEventListener("click",function(ev){
 		
-		let dom = document;
-		
-		let td_work
-		= dom.querySelector("input[name='td_work']");
-		let td_date 
-		= dom.querySelector("input[name='td_date']");
-		let td_time 
-		= dom.querySelector("input[name='td_time']");
-		let td_place
-		= dom.querySelector("input[name='td_place']");
-		
-		dom.querySelector("form.v1").submit();
-	}) 
-}) 
+		let tag_name = ev.target.tagName;
+		if(tag_name == "TD") {
+			let td_seq = ev
+						.target
+						.closest("TR")
+						.dataset.seq
+			document.location.href
+			="${rootPath}/todolist/view?td_seq=" 
+					+ td_seq						
+		}
+	})
+})
+
 </script>
 </head>
 <body>
 <form class="v1" method="POST" >
 	<h1>TO DO List</h1>
 	
-	<input name="td_date" placeholder="작성일자" >
-	<input name="td_time" placeholder="작성시각" >
-	<input name="td_work" placeholder="할일">
-	<input name="td_place" placeholder="장소" >
-	<table id="add">
+	<input name="td_date"  placeholder="작성일자" >
+	<input name="td_time"  placeholder="작성시각" >
+	<input name="td_work"  placeholder="할일">
+	<input name="td_place"  placeholder="장소" >
+	
 	<button class="btn_save" type="button">추가</button>
+	</form>
+	<table id="add">
 	<tr>
 		<th>No.</th>
 		<th>할일</th>
@@ -82,6 +83,6 @@ document.addEventListener("DOMContentLoaded",function(){
 		</tr>
 	</c:forEach>
 	</table>
-	</form>
+
 </body>
 </html>
